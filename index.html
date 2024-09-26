@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    .language-button {
+      font-size: 24px;
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+    }
+    .language-button:hover {
+      background-color: #0056b3;
+    }
+    .arabic {
+      font-family: 'Amiri', serif; /* Load Arabic font */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Choose Language | Sprache Wählen</h1>
+    <button class="language-button" onclick="window.location.href='menu-de.html'">Deutsch</button>
+    <button class="language-button arabic" onclick="window.location.href='menu-ar.html'">العربية</button>
+  </div>
+</body>
+</html>

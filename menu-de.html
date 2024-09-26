@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menü - Deutsch</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #212224; /* Matching the menu color */
+            color: #212224;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            background-color: #212224;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px #212224;
+        }
+
+        .sidenav a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid #212224;
+        }
+
+        .sidenav a:hover {
+            background-color: #212224;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .content {
+            padding: 20px;
+            transition: margin-left 0.5s;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #212224;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+            background-color: #212224;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .menu-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        #openNav {
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #212224;
+            padding: 0px 0px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+            border-radius: 5px;
+        }
+
+        /* Style for hiding the "Menü" text on mobile screens */
+        #openNav span {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+            #openNav span {
+                display: none; /* Hides only the "Menü" text on small screens */
+            }
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .sidenav {
+                width: 100%;
+                height: 100%;
+            }
+
+            #openNav {
+                top: 10px;
+                left: 10px;
+            }
+
+            .menu-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div id="info" class="menu-section">
+            <img src="Images/page1-min.png" alt="Restaurant Info">
+        </div>
+
+        <div id="vorspeisen" class="menu-section">
+            <img src="Images/page2-min.png" alt="Vorspeisen">
+        </div>
+
+        <div id="pasta" class="menu-section">
+            <img src="Images/page3-min.png" alt="Pasta">
+        </div>
+
+        <div id="pizza" class="menu-section">
+            <img src="Images/page4-min.png" alt="Pizza">
+        </div>
+        <div class="menu-section">
+            <img src="Images/page5-min.png" alt="Pizza Continued">
+        </div>
+
+        <div id="fleisch" class="menu-section">
+            <img src="Images/page6-min.png" alt="Fleischgerichte">
+        </div>
+
+        <div id="kinder" class="menu-section">
+            <img src="Images/page8-min.png" alt="kinderportion">
+        </div>
+
+        <div id="getraenke" class="menu-section">
+            <img src="Images/page7-min.png" alt="getraenke">
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- When a user clicks on a link, the sidenav will close -->
+        <a href="#info" onclick="closeNav()">Kontakt</a>
+        <a href="#vorspeisen" onclick="closeNav()">Vorspeisen</a>
+        <a href="#pasta" onclick="closeNav()">Pasta | Nudelgerichte</a>
+        <a href="#pizza" onclick="closeNav()">Pizza</a>
+        <a href="#fleisch" onclick="closeNav()">Fleischgerichte</a>
+        <a href="#kinder" onclick="closeNav()">Kinderportionen</a>
+        <a href="#getraenke" onclick="closeNav()">Getränke</a>
+    </div>
+
+    <script>
+        // Ensure the sidenav is closed on page loads
+        window.onload = function() {
+            closeNav(); // Close the sidenav as soon as the page loads
+        };
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = window.innerWidth <= 768 ? "100%" : "250px";
+        }
+    </script>
+
+    <!-- Wrap the hamburger icon and the "Menü" word in a span -->
+    <span id="openNav" onclick="openNav()">&#9776; <span>Menü</span></span>
+
+</body>
+</html>
